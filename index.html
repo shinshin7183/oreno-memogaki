@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="shortcut icon" href="nikozimusi.ico"> -->
+    <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAICAAAAEABADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgwHAAOOAQADDADgAqnAwA6KD4APSA9ADXYPQAYPT0ABDg3wAMnJwA+KDQAPSAyAD///8AwMDAAICAgAAAAAAA///////xL///IRER7kRPEf//////8S///uERERHuRPH///////Ef/5h+4REREe7x////////E/mHd37hERES8f///////x///3d3fuEREvH////////93d3/d3d+ERLx///////8zMzN3f93d+EfEf//////zMzMzM3e93d+HxH//////MzMzMzM3e93d+ER//////zMz8zMzM3e93d+Ef/////MzPb8zMzM3e93d+H/////zMz2b8zMzM3f53d+/////8zP9VX/zMzM3f53d//////MzM9fzMzMzN3x53f/////zMzM/MzMzMzN8R53//////zM/MzM/MzMzfER6P/////8zPzuzPzMzM3xES7//////8z8zMz8zMzPERI////////Mz87sz8zMzxI//////////M/MzM/MzPI////////////MzO7MzM8//////////////MzMzM/////////////////8zM///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////4j///////////////////94////////////////////////////////////////////////////////w4AA/8MAAP/CAAD/4AAA/+AAAP/gAAD/wAAA/4AAAP8AAAD/AAAA/gAAAP4AAAD+AAAA/gAAAP4AAAD/AAAA/wAAAP+AAAD/gAAB/8AAB//gAB//8AB///gD///+H////3////9////+////8v///+H////h////8////////w==">
+    <title>俺のメモ書き</title>
+    <style>
+        .italic{
+            display:inline-block;
+            -webkit-transform: skewX(-15deg);
+            -ms-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+        }
+
+        body {
+            background-color: white;
+            /* background-image: url(nikozimusi.gif); */
+            background-image: url(data:image/gif;base64,R0lGODlhQABAALMAAHDAoBDgOA7AMAycKvig6PSA9PRg1/T0YN/gEJycDNCg+MiA9P///8DAwICAgAAAACH5BAEAAAAALAAAAABAAEAAAAT/EMhJq704683te10ojtNzICCprtWDoGzMfkAq36ON75zO/x6gsPXxDW8fhpJRPCKXUGbTSXpAHY7oY0CjdqxMLfQh4Bq9FHAYq1S3A45EF91qi7WOw8HBpaeXVmxhUQ0mDgFlZ05qboNQhYcBiA6KQo2OUUqFknAOCHJ0jQ8Fl5qbWHonlGiMowWklw2QqXsOiV5uDwYGpbImqViSt1S5vJkMspR6wZyIfcRjx8kuzJIPnM+Lx48NlNWc18LZR6WmlM3WwtdYq7iZsoXhnFjhAg8OBAQFvKwP8L732LHLR0odQX64AhT5gCWfw4cFET0gwK4Sj2tcDBR4yDEfPXWH/4YtslZDo0eB7NJJ5CRyyDV7EgJGQgdOHctxliSWEECzmTx7Ny3KCKdDJspI9eQ5ExrjpY9RHSmeWxl0JMw0G6MmPdrOpc40XPMl5biP6YyvaXg2o/TBHj6HZYlNSYvugQIFC8IdNbvCLl4jRq3hzUuzJRC7C/J6QACM3oeehg/PScOY1rKUVf14EGi5MZbIfsisZdf5Ml9Lamly1vPptKWZPSUJBKWZci3YkHHWdkELc+Fnc1mRtux7aY0trpGoHd47WCIyulml7pSHOKUy0UMJmE49VesB2UMV2T6dnZzgtWMubZv6efoLSUuQcf8evvE0H8LvVucBbf0095UgiS1+++nm1H8e5PWAYgASGNoCdyVWlIIMIlhDYhKmAeFgyZGD3oIYdvjeQhaWGAEAOw==);
+            background-size: 64px 64px;
+            background-repeat: repeat-x;
+            /* background-position: left 0% bottom 48px; */
+            animation: Move 1.6s linear 0s infinite normal none;
+        }
+
+        #title {
+            font-size: 36px;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 112px;
+            text-align: center;
+            font-size: 0.8em;
+        }
+
+        @keyframes Move {
+            0% {
+                background-position: left 0px bottom 48px;
+            }
+
+            100% {
+                background-position: left -64px bottom 48px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">備忘録的なもの</h1>
+    <p>入力データをいちいち探すのは面倒くさい…というずぼらな自分のためにとりあえず作ったメモ書きである。</p>
+    <h2>以下メモ書き部分</h2>
+    <ul>
+        <dt>奨学生番号</dt>
+        <dd>620-04-103928</dd>
+        <dt>プロメトリックID</dt>
+        <dd>JP1609502</dd>
+        <dt>コマンドプロンプト Base64変換コマンド</dt>
+        <!-- <dd>certutil -encode <span style="color:#F99;">入力ファイル</span> <span style="color:#99F;">出力ファイル</span></dd> -->
+        <dd>certutil -encode <span class="italic">入力ファイル</span> <span class="italic">出力ファイル</span></dd>
+    </ul>
+    <!-- <img src="nikozimusi.gif" width="64px" height="64px" alt="ニコジムシ"> -->
+    <footer>
+        <p>
+            <span id="LB">&lt;</span> Copyright &copy; 20XX Jinteng Chengmi <span id="RB">&gt;</span>
+        </p>
+    </footer>
+    <script>
+        let Title = document.querySelector('#title');
+        let LeftButton = document.querySelector('#LB');
+        let RightButton = document.querySelector('#RB');
+        let cnt = 0;
+        Title.addEventListener('click', () => {
+            if (++cnt == 1) {
+                Title.style.color = 'red';
+            } else {
+                Title.style.color = 'black';
+                cnt = 0;
+            }
+        });
+        LeftButton.addEventListener('click', () => {
+            document.querySelector('body').style.animationDirection = "normal";
+        });
+        RightButton.addEventListener('click', () => {
+            document.querySelector('body').style.animationDirection = "reverse";
+        });
+    </script>
+</body>
+
+</html>
