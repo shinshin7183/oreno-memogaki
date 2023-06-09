@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="shortcut icon" href="nikozimusi.ico"> -->
-    <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAICAAAAEABADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgwHAAOOAQADDADgAqnAwA6KD4APSA9ADXYPQAYPT0ABDg3wAMnJwA+KDQAPSAyAD///8AwMDAAICAgAAAAAAA///////xL///IRER7kRPEf//////8S///uERERHuRPH///////Ef/5h+4REREe7x////////E/mHd37hERES8f///////x///3d3fuEREvH////////93d3/d3d+ERLx///////8zMzN3f93d+EfEf//////zMzMzM3e93d+HxH//////MzMzMzM3e93d+ER//////zMz8zMzM3e93d+Ef/////MzPb8zMzM3e93d+H/////zMz2b8zMzM3f53d+/////8zP9VX/zMzM3f53d//////MzM9fzMzMzN3x53f/////zMzM/MzMzMzN8R53//////zM/MzM/MzMzfER6P/////8zPzuzPzMzM3xES7//////8z8zMz8zMzPERI////////Mz87sz8zMzxI//////////M/MzM/MzPI////////////MzO7MzM8//////////////MzMzM/////////////////8zM///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////4j///////////////////94////////////////////////////////////////////////////////w4AA/8MAAP/CAAD/4AAA/+AAAP/gAAD/wAAA/4AAAP8AAAD/AAAA/gAAAP4AAAD+AAAA/gAAAP4AAAD/AAAA/wAAAP+AAAD/gAAB/8AAB//gAB//8AB///gD///+H////3////9////+////8v///+H////h////8////////w==">
+    <link rel="shortcut icon"
+        href="data:image/x-icon;base64,AAABAAEAICAAAAEABADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgwHAAOOAQADDADgAqnAwA6KD4APSA9ADXYPQAYPT0ABDg3wAMnJwA+KDQAPSAyAD///8AwMDAAICAgAAAAAAA///////xL///IRER7kRPEf//////8S///uERERHuRPH///////Ef/5h+4REREe7x////////E/mHd37hERES8f///////x///3d3fuEREvH////////93d3/d3d+ERLx///////8zMzN3f93d+EfEf//////zMzMzM3e93d+HxH//////MzMzMzM3e93d+ER//////zMz8zMzM3e93d+Ef/////MzPb8zMzM3e93d+H/////zMz2b8zMzM3f53d+/////8zP9VX/zMzM3f53d//////MzM9fzMzMzN3x53f/////zMzM/MzMzMzN8R53//////zM/MzM/MzMzfER6P/////8zPzuzPzMzM3xES7//////8z8zMz8zMzPERI////////Mz87sz8zMzxI//////////M/MzM/MzPI////////////MzO7MzM8//////////////MzMzM/////////////////8zM///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////4j///////////////////94////////////////////////////////////////////////////////w4AA/8MAAP/CAAD/4AAA/+AAAP/gAAD/wAAA/4AAAP8AAAD/AAAA/gAAAP4AAAD+AAAA/gAAAP4AAAD/AAAA/wAAAP+AAAD/gAAB/8AAB//gAB//8AB///gD///+H////3////9////+////8v///+H////h////8////////w==">
     <title>俺のメモ書き</title>
     <style>
-        .italic{
-            display:inline-block;
+        .italic {
+            display: inline-block;
             -webkit-transform: skewX(-15deg);
             -ms-transform: skewX(-15deg);
             transform: skewX(-15deg);
@@ -32,12 +33,17 @@
             text-shadow: 8px 8px 10px #808080;
         }
 
-        .dl-cmd.none{
+        .dl-cmd.none {
             overflow: hidden;
             height: 0;
         }
 
-        .dl-etc.none{
+        .dl-vscode.none {
+            overflow: hidden;
+            height: 0;
+        }
+
+        .dl-etc.none {
             overflow: hidden;
             height: 0;
         }
@@ -72,12 +78,34 @@
             <dd>certutil -encode <span class="italic">入力ファイル</span> <span class="italic">出力ファイル</span></dd>
             <dt>ダミーデータ作成</dt>
             <dd>
-                fsutil file createnew <span class="italic">ドライブ名</span>:<span class="italic">ファイルパス</span> <span class="italic">生成サイズ&#40;Byte&#41;</span>
+                fsutil file createnew <span class="italic">ドライブ名</span>:<span class="italic">ファイルパス</span> <span
+                    class="italic">生成サイズ&#40;Byte&#41;</span>
                 <div>
                     （入力例）\C:\Users\dummy.txt 1024<br>
                     <small>※0x00で埋め尽くされたバイナリデータが生成される。</small>
                 </div>
             </dd>
+        </dl>
+        <h3 id="dl-title">VS Code ショートカットキー</h3>
+        <dl class="dl-vscode">
+            <dt>自動整形</dt>
+            <dd>Shift + Alt + F</dd>
+            <dt>カーソル行の下&lpar;上&rpar;に空行を挿入</dt>
+            <dd>Ctrl &lpar;+ Shift&rpar; + Enter</dd>
+            <dt>カーソル行／選択行を移動&lpar;複数行対応&rpar;</dt>
+            <dd>Alt + ↑/↓</dd>
+            <dt>カーソル行／選択行をコピー&lpar;複数行対応&rpar;</dt>
+            <dd>Alt + Shift + ↑/↓</dd>
+            <dt>コピー&lpar;切り取り&rpar;</dt>
+            <dd>
+                Ctrl + C&lpar;X&rpar;<br>
+                <small>※非選択状態で使用すると行コピー&lpar;切り取り&rpar;になる</small>
+            </dd>
+            <dt>単語の部分削除</dt>
+            <dd>Ctrl + BS&lpar;Del&rpar;</dd>
+            <dt>カーソル行の削除</dt>
+            <dd>Ctrl + Shift + K</dd>
+
         </dl>
         <h3 id="dl-title">その他</h3>
         <dl class="dl-etc">
@@ -86,12 +114,12 @@
             <dt>黄緑6号 カラーコード</dt>
             <dd>
                 RGB:#85C023（参考:JR東日本公式サイト 山手線ナンバリング）
-                <div style="width:128px; height:32px; background-color:#85c023;" ></div>
+                <div style="width:128px; height:32px; background-color:#85c023;"></div>
             </dd>
             <dt>プロメトリックID</dt>
             <dd>JP1609502</dd>
-            <dt>奨学生番号</dt>
-            <dd>620-04-103928</dd>
+            <!--<dt>奨学生番号</dt>
+                <dd>620-04-103928</dd>-->
         </dl>
         <p><a href="https://github.com/shinshin7183/oreno-memogaki.git">このページを管理しているGitHubリポジトリ</a></p>
         <!-- <img src="nikozimusi.gif" width="64px" height="64px" alt="ニコジムシ"> -->
@@ -103,7 +131,7 @@
     </footer>
     <script>
         const Title = document.querySelector('#title');
-        const dlTitles=document.querySelectorAll('#dl-title');
+        const dlTitles = document.querySelectorAll('#dl-title');
         const LeftButton = document.querySelector('#LB');
         const RightButton = document.querySelector('#RB');
         let cnt = 0;
@@ -114,8 +142,8 @@
                 Title.style.color = 'black';
             }
         });
-        dlTitles.forEach((dl_title)=>{
-            dl_title.addEventListener('click',()=>{
+        dlTitles.forEach((dl_title) => {
+            dl_title.addEventListener('click', () => {
                 dl_title.nextElementSibling.classList.toggle('none');
             });
         });
