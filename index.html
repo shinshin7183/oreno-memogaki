@@ -29,9 +29,21 @@
         #title {
             font-size: 36px;
             text-align: center;
+            text-shadow: 8px 8px 10px #808080;
+        }
+
+        .dl-cmd.none{
+            overflow: hidden;
+            height: 0;
+        }
+
+        .dl-etc.none{
+            overflow: hidden;
+            height: 0;
         }
 
         footer {
+            border-top: 1px solid #808080;
             margin-top: 112px;
             text-align: center;
             font-size: 0.8em;
@@ -50,48 +62,62 @@
 </head>
 
 <body>
-    <h1 id="title">備忘録的なもの</h1>
-    <p>必要なデータをいちいち探すのは面倒くさい…というずぼらな自分のために、とりあえず作ったメモ書きである。</p>
-    <h2>～以下メモ書き部分～</h2>
-    <h3>コマンドプロンプト</h3>
-    <dl>
-        <dt>Base64変換</dt>
-        <dd>certutil&nbsp;-encode&nbsp;<span class="italic">入力ファイル</span>&nbsp;<span class="italic">出力ファイル</span></dd>
-        <dt>ダミーデータ作成</dt>
-        <dd>
-            fsutil&nbsp;file&nbsp;createnew&nbsp;<span class="italic">ドライブ名</span>:<span class="italic">ファイルパス</span>&nbsp;<span class="italic">生成サイズ&#40;Byte&#41;</span>
-            <div>
-                （入力例）\C:\Users\dummy.txt&nbsp;1024<br>
-                <small>※0x00の指定されたバイト数が生成される。</small>
-            </div>
-        </dd>
-    </dl>
-    <h3>その他</h3>
-    <dl>
-        <dt>奨学生番号</dt>
-        <dd>620-04-103928</dd>
-        <dt>プロメトリックID</dt>
-        <dd>JP1609502</dd>
-    </dl>
-    <p><a href="https://github.com/shinshin7183/oreno-memogaki.git">このページを管理しているGitHubリポジトリ</a></p>
-    <!-- <img src="nikozimusi.gif" width="64px" height="64px" alt="ニコジムシ"> -->
+    <main>
+        <h1 id="title">備忘録的なもの</h1>
+        <p>必要なデータをいちいち探すのは面倒くさい…というずぼらな自分のために、とりあえず作ったメモ書きである。</p>
+        <h2>～以下メモ書き部分～</h2>
+        <h3 id="dl-title">コマンドプロンプト</h3>
+        <dl class="dl-cmd">
+            <dt>Base64変換</dt>
+            <dd>certutil -encode <span class="italic">入力ファイル</span> <span class="italic">出力ファイル</span></dd>
+            <dt>ダミーデータ作成</dt>
+            <dd>
+                fsutil file createnew <span class="italic">ドライブ名</span>:<span class="italic">ファイルパス</span> <span class="italic">生成サイズ&#40;Byte&#41;</span>
+                <div>
+                    （入力例）\C:\Users\dummy.txt 1024<br>
+                    <small>※0x00で埋め尽くされたバイナリデータが生成される。</small>
+                </div>
+            </dd>
+        </dl>
+        <h3 id="dl-title">その他</h3>
+        <dl class="dl-etc">
+            <dt>HTML スペース記号</dt>
+            <dd>&amp;nbsp;</dd>
+            <dt>黄緑6号 カラーコード</dt>
+            <dd>
+                RGB:#85C023（参考:JR東日本公式サイト 山手線ナンバリング）
+                <div style="width:128px; height:32px; background-color:#85c023;" ></div>
+            </dd>
+            <dt>プロメトリックID</dt>
+            <dd>JP1609502</dd>
+            <dt>奨学生番号</dt>
+            <dd>620-04-103928</dd>
+        </dl>
+        <p><a href="https://github.com/shinshin7183/oreno-memogaki.git">このページを管理しているGitHubリポジトリ</a></p>
+        <!-- <img src="nikozimusi.gif" width="64px" height="64px" alt="ニコジムシ"> -->
+    </main>
     <footer>
         <p>
             <span id="LB">&lt;</span> Copyright &copy; 20XX Jinteng Chengmi <span id="RB">&gt;</span>
         </p>
     </footer>
     <script>
-        let Title = document.querySelector('#title');
-        let LeftButton = document.querySelector('#LB');
-        let RightButton = document.querySelector('#RB');
+        const Title = document.querySelector('#title');
+        const dlTitles=document.querySelectorAll('#dl-title');
+        const LeftButton = document.querySelector('#LB');
+        const RightButton = document.querySelector('#RB');
         let cnt = 0;
         Title.addEventListener('click', () => {
-            if (++cnt == 1) {
+            if (++cnt % 2) {
                 Title.style.color = 'red';
             } else {
                 Title.style.color = 'black';
-                cnt = 0;
             }
+        });
+        dlTitles.forEach((dl_title)=>{
+            dl_title.addEventListener('click',()=>{
+                dl_title.nextElementSibling.classList.toggle('none');
+            });
         });
         LeftButton.addEventListener('click', () => {
             document.querySelector('body').style.animationDirection = "normal";
