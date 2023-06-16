@@ -10,7 +10,7 @@
         href="data:image/x-icon;base64,AAABAAEAICAAAAEABADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgwHAAOOAQADDADgAqnAwA6KD4APSA9ADXYPQAYPT0ABDg3wAMnJwA+KDQAPSAyAD///8AwMDAAICAgAAAAAAA///////xL///IRER7kRPEf//////8S///uERERHuRPH///////Ef/5h+4REREe7x////////E/mHd37hERES8f///////x///3d3fuEREvH////////93d3/d3d+ERLx///////8zMzN3f93d+EfEf//////zMzMzM3e93d+HxH//////MzMzMzM3e93d+ER//////zMz8zMzM3e93d+Ef/////MzPb8zMzM3e93d+H/////zMz2b8zMzM3f53d+/////8zP9VX/zMzM3f53d//////MzM9fzMzMzN3x53f/////zMzM/MzMzMzN8R53//////zM/MzM/MzMzfER6P/////8zPzuzPzMzM3xES7//////8z8zMz8zMzPERI////////Mz87sz8zMzxI//////////M/MzM/MzPI////////////MzO7MzM8//////////////MzMzM/////////////////8zM///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////4j///////////////////94////////////////////////////////////////////////////////w4AA/8MAAP/CAAD/4AAA/+AAAP/gAAD/wAAA/4AAAP8AAAD/AAAA/gAAAP4AAAD+AAAA/gAAAP4AAAD/AAAA/wAAAP+AAAD/gAAB/8AAB//gAB//8AB///gD///+H////3////9////+////8v///+H////h////8////////w==">
     <title>俺のメモ書き</title>
     <style>
-        .italic {
+        i {
             display: inline-block;
             -webkit-transform: skewX(-15deg);
             -ms-transform: skewX(-15deg);
@@ -39,6 +39,11 @@
         }
 
         .dl-vscode.none {
+            overflow: hidden;
+            height: 0;
+        }
+        
+        .dl-html.none {
             overflow: hidden;
             height: 0;
         }
@@ -72,21 +77,20 @@
         <h1 id="title">備忘録的なもの</h1>
         <p>必要なデータをいちいち探すのは面倒くさい…というずぼらな自分のために、とりあえず作ったメモ書きである。</p>
         <h2>～以下メモ書き部分～</h2>
-        <h3 id="dl-title">コマンドプロンプト</h3>
+        <h3 class="dl-title">コマンドプロンプト</h3>
         <dl class="dl-cmd">
             <dt>Base64変換</dt>
-            <dd>certutil -encode <span class="italic">入力ファイル</span> <span class="italic">出力ファイル</span></dd>
+            <dd>certutil -encode <i>入力ファイル</i> <i>出力ファイル</i></dd>
             <dt>ダミーデータ作成</dt>
             <dd>
-                fsutil file createnew <span class="italic">ドライブ名</span>:<span class="italic">ファイルパス</span> <span
-                    class="italic">生成サイズ&#40;Byte&#41;</span>
+                fsutil file createnew <i>ドライブ名</i>:<i>ファイルパス</i> <i>生成サイズ&#40;Byte&#41;</i>
                 <div>
                     （入力例）\C:\Users\dummy.txt 1024<br>
                     <small>※0x00で埋め尽くされたバイナリデータが生成される。</small>
                 </div>
             </dd>
         </dl>
-        <h3 id="dl-title">VS Code ショートカットキー</h3>
+        <h3 class="dl-title">VS Code ショートカットキー</h3>
         <dl class="dl-vscode">
             <dt>自動整形</dt>
             <dd>Shift + Alt + F</dd>
@@ -107,10 +111,26 @@
             <dd>Ctrl + Shift + K</dd>
 
         </dl>
-        <h3 id="dl-title">その他</h3>
-        <dl class="dl-etc">
-            <dt>HTML スペース記号</dt>
+        <h3 class="dl-title">HTML</h3>
+        <dl class="dl-html">
+            <dt>スペース記号</dt>
             <dd>&amp;nbsp;</dd>
+            <dt>ルビ</dt>
+            <dd>
+                &lt;ruby&gt;<i>文字列</i>&lt;rt&gt;<i>ルビ</i>&lt;/rt&gt;&lt;/ruby&gt;
+                <div>（使用例）あなた…<ruby>怠惰<rt>たいだ</rt></ruby>デスね</div>
+            </dd>
+            <dt>実際に書いたHTML</dt>
+            <dd>
+                <ul>
+                    <li><a href="./media/media.html">メディア再生について</a></li>
+                    <li><a href="./graphics/canvas.html">グラフィックスについて</a></li>
+                    <li><a href="./Geolocation/geolocation.html">Geolocation APIについて</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <h3 class="dl-title">その他</h3>
+        <dl class="dl-etc">
             <dt>黄緑6号 カラーコード</dt>
             <dd>
                 RGB:#85C023（参考:JR東日本公式サイト 山手線ナンバリング）
@@ -131,7 +151,7 @@
     </footer>
     <script>
         const Title = document.querySelector('#title');
-        const dlTitles = document.querySelectorAll('#dl-title');
+        const dlTitles = document.querySelectorAll('.dl-title');
         const LeftButton = document.querySelector('#LB');
         const RightButton = document.querySelector('#RB');
         let cnt = 0;
