@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メディア再生</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        #play{
+            margin: 0 8px;
+            font-size: 32px;
+        }
+        #play:hover{
+            color:green;
+        }
+        #pause{
+            margin: 0 8px;
+            font-size: 32px;
+        }
+        #pause:hover{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>メディア再生テスト</h1>
+        <h2>2017年 五所川原花火大会</h2>
+        <video width="640" height="360" controls>
+            <source src="2017Gosyogawara-Hanabi.mp4" type="video/mp4">
+            <p>このブラウザでは再生できません</p>
+        </video>
+        <div>
+            <span id="play">▶</span><span id="pause">||</span>
+        </div>
+        <h2>ユーロビートミッキーマウスマーチアレンジ</h2>
+        <audio controls>
+            <source src="Eurobeat Mickey Mouse March Arrange.ogg" type="audio/ogg">
+            <p>このブラウザでは再生できません</p>
+        </audio>
+    </main>
+    <script>
+        const Video=document.querySelector('video');
+        const Audio=document.querySelector('audio');
+        const Play=document.querySelector('#play');
+        const Pause=document.querySelector('#pause');
+        Play.addEventListener('click',()=>{
+            Video.play();
+        });
+        Pause.addEventListener('click',()=>{
+            Video.pause();
+        });
+    </script>
+</body>
+</html>
