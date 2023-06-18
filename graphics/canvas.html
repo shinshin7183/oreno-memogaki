@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グラフィックス</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        canvas{
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>グラフィックス表示テスト</h1>
+        <h2>Canvas</h2>
+        <canvas width="640" height="480"></canvas>
+        <h2>SVG</h2>
+        <p>imgﾀｸﾞで表示</p>
+        <img src="ico_rosen_jy.svg" width="64px" height="64px" alt="山手線">
+        <p>svgﾀｸﾞで表示</p>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 106 106">
+            <defs>
+                <style>.cls-1{fill:#fff;}.cls-2{fill:#85c023;}.cls-3{fill:#231815;}</style>
+            </defs>
+            <title>jy</title>
+            <g id="レイヤー_2" data-name="レイヤー 2">
+                <g id="レイヤー_1-2" data-name="レイヤー 1">
+                    <path class="cls-1" d="M95.4,0A10.54,10.54,0,0,1,106,10.6V95.4A10.54,10.54,0,0,1,95.4,106H10.6A10.54,10.54,0,0,1,0,95.4V10.6A10.54,10.54,0,0,1,10.6,0H95.4"/>
+                    <rect class="cls-1" x="10.6" y="10.6" width="84.8" height="84.8"/>
+                    <path class="cls-2" d="M95.4,95.4H10.6V10.6H95.4ZM95.4,0H10.6A10.54,10.54,0,0,0,0,10.6V95.4A10.54,10.54,0,0,0,10.6,106H95.4A10.54,10.54,0,0,0,106,95.4V10.6A10.54,10.54,0,0,0,95.4,0"/>
+                    <path class="cls-3" d="M18.9,67.9a11.69,11.69,0,0,0,4.5.8c6.1,0,6.1-4.9,6.1-8.3V29.1H39V65c0,5-3.2,12-12.9,12a25.39,25.39,0,0,1-7.2-.9Z"/>
+                    <polygon class="cls-3" points="61.6 57.6 44.4 29.1 55.4 29.1 66.5 48.9 77.9 29.1 87.8 29.1 71 57.6 71 76.1 61.6 76.1 61.6 57.6"/>
+                </g>
+            </g>
+        </svg>
+        <p>さっすがベクター画像！<br>どんなに拡大してもきれいに表示されるね！（widthとheightを指定しないとアホみたいにでっかくなるぞ。）</p>
+    </main>
+    <script>
+        const Canvas=document.querySelector('canvas');
+        const ctx=Canvas.getContext('2d');
+        //矩形
+        ctx.fillRect(10,12,64,128); //塗りつぶし(x,y,w,h)
+        ctx.strokeRect(100,128,96,80); //枠線
+        ctx.clearRect(32,32,48,56); //領域消去
+        //直線
+        ctx.beginPath(); //描画開始
+        ctx.moveTo(16,160); //始点(x,y)
+        ctx.lineTo(112,240); //次点
+        ctx.lineTo(64,320); //次点
+        ctx.closePath(); //点間を閉じる
+        ctx.stroke(); //枠線で描画
+        //直線(2)
+        ctx.fillStyle='red'; //塗りつぶす色を指定(描画する前に指定する)
+        ctx.beginPath();
+        ctx.moveTo(24,320);
+        ctx.lineTo(128,400);
+        ctx.lineTo(48,480);
+        ctx.closePath();
+        ctx.fill(); //塗りつぶしで描画
+        //円
+        ctx.strokeStyle='green'; //枠線の色を指定
+        ctx.beginPath();
+        ctx.arc(480,240,120,0,Math.PI*1.5,false); //(x,y,r,始点角度[rad],終点角度[rad],回転方向(f:反時計回り))
+        ctx.stroke();
+        //文字
+        ctx.font='bold 20px sans-serif';
+        ctx.strokeText('ああああ',320,32); //色は、前に設定したものが適応される
+        ctx.fillText('いいいい',280,64);
+        //画像
+        const img=new Image(); //Imageｵﾌﾞｼﾞｪｸﾄを作成
+        img.src='kyle.gif'; //オブジェクトに画像をリンクさせる
+        img.onload=function(){ //画像の読み込みが完了してから実行
+            ctx.drawImage(img,240,320); //(ｵﾌﾞｼﾞｪｸﾄ,x,y)
+            ctx.drawImage(img,240,240,128,128); //(ｵﾌﾞｼﾞｪｸﾄ,x,y,w,h)
+        }
+    </script>
+</body>
+</html>
