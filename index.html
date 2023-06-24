@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="shortcut icon" href="nikozimusi.ico"> -->
-    <link rel="shortcut icon"
-        href="data:image/x-icon;base64,AAABAAEAICAAAAEABADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgwHAAOOAQADDADgAqnAwA6KD4APSA9ADXYPQAYPT0ABDg3wAMnJwA+KDQAPSAyAD///8AwMDAAICAgAAAAAAA///////xL///IRER7kRPEf//////8S///uERERHuRPH///////Ef/5h+4REREe7x////////E/mHd37hERES8f///////x///3d3fuEREvH////////93d3/d3d+ERLx///////8zMzN3f93d+EfEf//////zMzMzM3e93d+HxH//////MzMzMzM3e93d+ER//////zMz8zMzM3e93d+Ef/////MzPb8zMzM3e93d+H/////zMz2b8zMzM3f53d+/////8zP9VX/zMzM3f53d//////MzM9fzMzMzN3x53f/////zMzM/MzMzMzN8R53//////zM/MzM/MzMzfER6P/////8zPzuzPzMzM3xES7//////8z8zMz8zMzPERI////////Mz87sz8zMzxI//////////M/MzM/MzPI////////////MzO7MzM8//////////////MzMzM/////////////////8zM///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////4j///////////////////94////////////////////////////////////////////////////////w4AA/8MAAP/CAAD/4AAA/+AAAP/gAAD/wAAA/4AAAP8AAAD/AAAA/gAAAP4AAAD+AAAA/gAAAP4AAAD/AAAA/wAAAP+AAAD/gAAB/8AAB//gAB//8AB///gD///+H////3////9////+////8v///+H////h////8////////w==">
+    <link rel="shortcut icon" href="./nikozimusi.ico">
     <title>俺のメモ書き</title>
     <style>
         i {
@@ -19,8 +17,7 @@
 
         body {
             background-color: white;
-            /* background-image: url(nikozimusi.gif); */
-            background-image: url(data:image/gif;base64,R0lGODlhQABAALMAAHDAoBDgOA7AMAycKvig6PSA9PRg1/T0YN/gEJycDNCg+MiA9P///8DAwICAgAAAACH5BAEAAAAALAAAAABAAEAAAAT/EMhJq704683te10ojtNzICCprtWDoGzMfkAq36ON75zO/x6gsPXxDW8fhpJRPCKXUGbTSXpAHY7oY0CjdqxMLfQh4Bq9FHAYq1S3A45EF91qi7WOw8HBpaeXVmxhUQ0mDgFlZ05qboNQhYcBiA6KQo2OUUqFknAOCHJ0jQ8Fl5qbWHonlGiMowWklw2QqXsOiV5uDwYGpbImqViSt1S5vJkMspR6wZyIfcRjx8kuzJIPnM+Lx48NlNWc18LZR6WmlM3WwtdYq7iZsoXhnFjhAg8OBAQFvKwP8L732LHLR0odQX64AhT5gCWfw4cFET0gwK4Sj2tcDBR4yDEfPXWH/4YtslZDo0eB7NJJ5CRyyDV7EgJGQgdOHctxliSWEECzmTx7Ny3KCKdDJspI9eQ5ExrjpY9RHSmeWxl0JMw0G6MmPdrOpc40XPMl5biP6YyvaXg2o/TBHj6HZYlNSYvugQIFC8IdNbvCLl4jRq3hzUuzJRC7C/J6QACM3oeehg/PScOY1rKUVf14EGi5MZbIfsisZdf5Ml9Lamly1vPptKWZPSUJBKWZci3YkHHWdkELc+Fnc1mRtux7aY0trpGoHd47WCIyulml7pSHOKUy0UMJmE49VesB2UMV2T6dnZzgtWMubZv6efoLSUuQcf8evvE0H8LvVucBbf0095UgiS1+++nm1H8e5PWAYgASGNoCdyVWlIIMIlhDYhKmAeFgyZGD3oIYdvjeQhaWGAEAOw==);
+            background-image: url(./nikozimusi.gif);
             background-size: 64px 64px;
             background-repeat: repeat-x;
             /* background-position: left 0% bottom 48px; */
@@ -75,7 +72,7 @@
 <body>
     <main>
         <h1 id="title">備忘録的なもの</h1>
-        <p>必要なデータをいちいち探すのは面倒くさい…というずぼらな自分のために、とりあえず作ったメモ書きである。</p>
+        <p>必要な情報をいちいち探すのは面倒くさい…というずぼらな自分のために、とりあえず作ったメモ書きである。</p>
         <h2>～以下メモ書き部分～</h2>
         <h3 class="dl-title">コマンドプロンプト</h3>
         <dl class="dl-cmd">
@@ -138,8 +135,6 @@
             </dd>
             <dt>プロメトリックID</dt>
             <dd>JP1609502</dd>
-            <!--<dt>奨学生番号</dt>
-                <dd>620-04-103928</dd>-->
         </dl>
         <p><a href="https://github.com/shinshin7183/oreno-memogaki.git">このページを管理しているGitHubリポジトリ</a></p>
         <!-- <img src="nikozimusi.gif" width="64px" height="64px" alt="ニコジムシ"> -->
@@ -152,7 +147,6 @@
     <script>
         const Title = document.querySelector('#title');
         const dlTitles = document.querySelectorAll('.dl-title');
-        const urlList = document.querySelectorAll('#url-list a');
         const LeftButton = document.querySelector('#LB');
         const RightButton = document.querySelector('#RB');
         let cnt = 0;
