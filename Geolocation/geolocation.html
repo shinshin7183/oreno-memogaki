@@ -14,6 +14,7 @@
         <h2>現在地座標</h2>
         <p>緯度:&nbsp;<span id="lati">???</span>&nbsp;度</p>
         <p>経度:&nbsp;<span id="longi">???</span>&nbsp;度</p>
+        <p><a href="../index.html">メインページへ戻る</a></p>
     </main>
     <script>
         const spMsg=document.querySelector('#support');
@@ -26,21 +27,21 @@
         }
         navigator.geolocation.getCurrentPosition(success, error);
         function success(position) {
-        // 取得した位置情報を活用する処理
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-        // console.log("緯度:" + latitude + ", 経度:" + longitude);
-        lati.innerHTML=latitude>=0? `北緯&nbsp;${latitude}`:`南緯&nbsp;${latitude*=-1}`;
-        longi.innerHTML=longitude>=0? `東経&nbsp;${longitude}`:`西経&nbsp;${longitude*=-1}`;
+            // 取得した位置情報を活用する処理
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            // console.log("緯度:" + latitude + ", 経度:" + longitude);
+            lati.innerHTML=latitude>=0? `北緯&nbsp;${latitude}`:`南緯&nbsp;${latitude*=-1}`;
+            longi.innerHTML=longitude>=0? `東経&nbsp;${longitude}`:`西経&nbsp;${longitude*=-1}`;
         }
 
         function error(error) {
-        // 位置情報の取得に失敗した場合の処理
-        const errNum = error.code;
-        switch(errNum){
-            case 1:
-                console.log('位置情報の使用が許可されませんでした');
-        }
+            // 位置情報の取得に失敗した場合の処理
+            const errNum = error.code;
+            switch(errNum){
+                case 1:
+                    console.log('位置情報の使用が許可されませんでした');
+            }
         }
     </script>
 </body>
