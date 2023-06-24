@@ -13,34 +13,37 @@
             margin: 0 8px;
             font-size: 32px;
         }
-        #play:hover{
-            color:green;
+        #play svg:hover{
+            fill:green;
         }
         #pause{
             margin: 0 8px;
             font-size: 32px;
         }
-        #pause:hover{
-            color:red;
+        #pause svg:hover{
+            fill:red;
         }
     </style>
 </head>
 <body>
     <main>
         <h1>メディア再生テスト</h1>
-        <h2>2017年 五所川原花火大会</h2>
-        <video width="640" height="360" controls>
-            <source src="2017Gosyogawara-Hanabi.mp4" type="video/mp4">
+        <h2>動画</h2>
+        <p>戦闘！チャンピオンミッキー</p>
+        <video width="720" height="480" controls>
+            <source src="./Battle! Champion Mikky.mp4" type="video/mp4">
             <p>このブラウザでは再生できません</p>
         </video>
         <div>
-            <span id="play">▶</span><span id="pause">||</span>
+            <span id="play"><svg width="32px" height="32px" viewBox="0 0 16 16"><path d="M 0 0 L 16 8 L 0 16 Z"/></svg></span><span id="pause"><svg width="32px" height="32px" viewBox="0 0 16 16"><rect x="2" y="0" width="4" height="16"/><rect x="10" y="0" width="4" height="16"/></svg></span>
         </div>
-        <h2>ユーロビートミッキーマウスマーチアレンジ</h2>
+        <h2>音声</h2>
+        <p>ユーロビートミッキーマウスマーチアレンジ</p>
         <audio controls>
-            <source src="Eurobeat Mickey Mouse March Arrange.ogg" type="audio/ogg">
+            <source src="./Eurobeat Mickey Mouse March Arrange.ogg" type="audio/ogg">
             <p>このブラウザでは再生できません</p>
         </audio>
+        <p><a href="../index.html">メインページへ戻る</a></p>
     </main>
     <script>
         const Video=document.querySelector('video');
