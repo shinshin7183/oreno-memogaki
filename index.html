@@ -122,13 +122,10 @@
             </dd>
             <dt>実際に書いたHTML</dt>
             <dd>
-                <ul>
+                <ul id="url-list">
                     <li><a href="./media/media.html">メディア再生について</a></li>
-                    <!-- <li><a href="https://shinshin7183.github.io/oreno-memogaki/media/media.html">メディア再生について</a></li> -->
-                    <!-- <li><a href="./graphics/canvas.html">グラフィックスについて</a></li> -->
-                    <li><a href="https://shinshin7183.github.io/oreno-memogaki/graphics/canvas.html">グラフィックスについて</a></li>
-                    <!-- <li><a href="./Geolocation/geolocation.html">Geolocation APIについて</a></li> -->
-                    <li><a href="https://shinshin7183.github.io/oreno-memogaki/Geolocation/geolocation.html">Geolocation APIについて</a></li>
+                    <li><a href="./graphics/canvas.html">グラフィックスについて</a></li>
+                    <li><a href="./Geolocation/geolocation.html">Geolocation APIについて</a></li>
                 </ul>
             </dd>
         </dl>
@@ -155,9 +152,11 @@
     <script>
         const Title = document.querySelector('#title');
         const dlTitles = document.querySelectorAll('.dl-title');
+        const urlList = document.querySelectorAll('#url-list a');
         const LeftButton = document.querySelector('#LB');
         const RightButton = document.querySelector('#RB');
         let cnt = 0;
+
         Title.addEventListener('click', () => {
             if (++cnt % 2) {
                 Title.style.color = 'red';
