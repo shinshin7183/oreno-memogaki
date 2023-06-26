@@ -5,27 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>メディア再生</title>
+    <!-- <link rel="stylesheet" href="../reset.css"> -->
     <style>
         h1{
             text-align: center;
         }
         #play{
             margin: 0 8px;
-            font-size: 32px;
         }
-        #play svg:hover{
+        #play:hover{
             fill:green;
         }
         #pause{
             margin: 0 8px;
-            font-size: 32px;
         }
-        #pause svg:hover{
+        #pause:hover{
             fill:red;
         }
     </style>
 </head>
 <body>
+    <svg id="c_play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none;">
+        <defs>
+            <symbol id="svg_play" viewBox="0 0 16 16">
+                <path d="M 0 0 L 16 8 L 0 16 Z"/>
+            </symbol>
+            <symbol id="svg_pause" viewBox="0 0 16 16">
+                <rect x="2" y="0" width="4" height="16"/><rect x="10" y="0" width="4" height="16"/>
+            </symbol>
+            <symbol id="svg_unmute">
+                <path d="M 1 5 L 3 5 L 8 0 L 8 15 L 3 10 L 1 10 Z"/>
+                <line x1="10" y1="6" x2="10" y2="9" style="stroke: green;"/>
+                <line x1="12" y1="4" x2="12" y2="11" style="stroke: green;"/>
+                <line x1="14" y1="2" x2="14" y2="13" style="stroke: green;"/>
+            </symbol>
+            <symbol id="svg_mute">
+                <path d="M 1 5 L 3 5 L 8 0 L 8 15 L 3 10 L 1 10 Z"/>
+                <line x1="9" y1="5" x2="15" y2="11" style="stroke: red;"/>
+                <line x1="9" y1="11" x2="15" y2="5" style="stroke: red;"/>
+            </symbol>
+        </defs>
+    </svg>
     <main>
         <h1>メディア再生テスト</h1>
         <h2>動画</h2>
@@ -35,10 +55,13 @@
             <p>このブラウザでは再生できません</p>
         </video>
         <div>
-            <span id="play"><svg width="32px" height="32px" viewBox="0 0 16 16"><path d="M 0 0 L 16 8 L 0 16 Z"/></svg></span><span id="pause"><svg width="32px" height="32px" viewBox="0 0 16 16"><rect x="2" y="0" width="4" height="16"/><rect x="10" y="0" width="4" height="16"/></svg></span>
+            <svg id="play" width="16px" height="16px" display="inline"><use href="#svg_play"/></svg><svg id="pause" width="16px" height="16px" display='none'><use href="#svg_pause"/></svg>
+            <svg id="unmute" width="16px" height="16px" display="inline"><use href="#svg_unmute"/></svg><svg id="mute" width="16px" height="16px" display='none'><use href="#svg_mute"/></svg>
+            <input type="range" id="volume" min="0" max="1" step="0.01" value="1" style="width: 100px;"><br>
+            <input type="range" id="time" min="0" max="" step="0.000001" value="0" style="width: 720px;">
         </div>
         <h2>音声</h2>
-        <p>ユーロビートミッキーマウスマーチアレンジ</p>
+        <p>ユーロビート・ミッキーマウスマーチ・アレンジ</p>
         <audio controls>
             <source src="./Eurobeat Mickey Mouse March Arrange.ogg" type="audio/ogg">
             <p>このブラウザでは再生できません</p>
@@ -50,11 +73,51 @@
         const Audio=document.querySelector('audio');
         const Play=document.querySelector('#play');
         const Pause=document.querySelector('#pause');
+        const UnMute=document.querySelector('#unmute');
+        const Mute=document.querySelector('#mute');
+        const VolBar=document.querySelector('#volume');
+        const TimeBar=document.querySelector('#time');
+        function pause(){
+            Video.pause();
+            Pause.style.display='none';
+            Play.style.display='inline';
+        }
+        function unmute(){
+            Video.muted=false;
+            Mute.style.display='none';
+            UnMute.style.display='inline';
+        }
+        setInterval(()=>{
+            TimeBar.value=Video.currentTime;
+        },1000/60); //処理内容,処理間隔
         Play.addEventListener('click',()=>{
             Video.play();
+            Play.style.display='none';
+            Pause.style.display='inline';
         });
         Pause.addEventListener('click',()=>{
-            Video.pause();
+            pause();
+        });
+        UnMute.addEventListener('click',()=>{
+            Video.muted=true;
+            UnMute.style.display='none';
+            Mute.style.display='inline';
+        });
+        Mute.addEventListener('click',()=>{
+            unmute();
+        });
+        Video.addEventListener('loadeddata',()=>{
+            TimeBar.max=Video.duration;
+        });
+        Video.addEventListener('ended',()=>{
+            pause();
+        });
+        VolBar.addEventListener('input',()=>{
+            unmute();
+            Video.volume=VolBar.value;
+        });
+        TimeBar.addEventListener('input',()=>{
+            Video.currentTime=TimeBar.value;
         });
     </script>
 </body>
